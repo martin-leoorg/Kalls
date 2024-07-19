@@ -2703,6 +2703,17 @@ void MphoneForm::showAddressBook()
 	getAddressForm->show();
 }
 
+
+void MphoneForm::appendText(void) {
+	QPushButton* buttonSender = qobject_cast<QPushButton*>(sender()); // retrieve the button you have clicked
+    QString buttonText = buttonSender->text();
+	callComboBox->setEditText(callComboBox->currentText() + buttonText.replace('&', ""));
+}
+
+void MphoneForm::clearInviteCB(void) {
+	callComboBox->setEditText("");
+}
+
 void MphoneForm::selectedAddress(const QString &address)
 {
 	callComboBox->setEditText(address);

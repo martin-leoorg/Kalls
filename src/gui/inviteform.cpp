@@ -149,6 +149,16 @@ void InviteForm::showAddressBook()
 	getAddressForm->show();
 }
 
+void InviteForm::appendText(void) {
+	QPushButton* buttonSender = qobject_cast<QPushButton*>(sender()); // retrieve the button you have clicked
+    QString buttonText = buttonSender->text();
+	inviteComboBox->setEditText(inviteComboBox->currentText() + buttonText.replace('&', ""));
+}
+
+void InviteForm::clearInviteCB(void) {
+	inviteComboBox->setEditText("");
+}
+
 void InviteForm::selectedAddress(const QString &address)
 {
 	inviteComboBox->setEditText(address);

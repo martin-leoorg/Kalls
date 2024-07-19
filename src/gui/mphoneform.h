@@ -141,6 +141,8 @@ public slots:
 	void quickCall();
 	void addToCallComboBox( const QString & destination );
 	void showAddressBook();
+	void appendText( void );
+	void clearInviteCB( void );
 	void selectedAddress( const QString & address );
 	void enableCallOptions( bool enable );
 	virtual void keyPressEvent( QKeyEvent * e ) override;

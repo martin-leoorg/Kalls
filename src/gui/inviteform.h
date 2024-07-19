@@ -24,6 +24,8 @@ public slots:
 	void reject();
 	void closeEvent( QCloseEvent * );
 	void showAddressBook();
+	void appendText( void );
+	void clearInviteCB( void );
 	void selectedAddress( const QString & address );
 	void warnHideUser( void );
 signals:

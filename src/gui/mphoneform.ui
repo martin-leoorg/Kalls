@@ -48,35 +48,72 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QTreeWidget" name="buddyListView">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>150</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::CustomContextMenu</enum>
-       </property>
-       <property name="whatsThis">
-        <string>You can create a separate buddy list for each user profile. You can only see availability of your buddies and publish your own availability if your provider offers a presence server.</string>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>true</bool>
-       </property>
-       <column>
-        <property name="text">
-         <string>Buddy list</string>
-        </property>
-       </column>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QTreeWidget" name="buddyListView">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>150</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="whatsThis">
+           <string>You can create a separate buddy list for each user profile. You can only see availability of your buddies and publish your own availability if your provider offers a presence server.</string>
+          </property>
+          <property name="rootIsDecorated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Buddy list</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="displayGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Display</string>
+          </property>
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QTextEdit" name="displayTextEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="text" stdset="0">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout">
         <item>
          <layout class="QGridLayout">
@@ -132,7 +169,7 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="icons.qrc">
+               <iconset theme="address-book-new" resource="icons.qrc">
                 <normaloff>:/icons/images/kontact_contacts.png</normaloff>:/icons/images/kontact_contacts.png</iconset>
               </property>
               <property name="shortcut">
@@ -147,6 +184,9 @@
               </property>
               <property name="text">
                <string>Dial</string>
+              </property>
+              <property name="icon">
+               <iconset theme="call-start-symbolic"/>
               </property>
               <property name="default">
                <bool>true</bool>
@@ -306,35 +346,260 @@
          </layout>
         </item>
         <item>
-         <widget class="QGroupBox" name="displayGroupBox">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Display</string>
-          </property>
-          <layout class="QVBoxLayout">
-           <item>
-            <widget class="QTextEdit" name="displayTextEdit">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="text" stdset="0">
-              <string/>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         <layout class="QGridLayout" name="PhonePad">
+          <item row="2" column="1">
+           <widget class="QPushButton" name="PhonePad7">
+            <property name="text">
+             <string>7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QPushButton" name="PhonePadHash">
+            <property name="text">
+             <string>#</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QPushButton" name="PhonePadBSpace">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset theme="edit-clear-symbolic">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="PhonePad4">
+            <property name="text">
+             <string>4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="4">
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="2">
+           <widget class="QPushButton" name="PhonePad0">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QPushButton" name="PhonePadPlus">
+            <property name="text">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="PhonePad2">
+            <property name="text">
+             <string>2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="PhonePad5">
+            <property name="text">
+             <string>5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QPushButton" name="PhonePadStar">
+            <property name="text">
+             <string>*</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QPushButton" name="PhonePadCall">
+            <property name="text">
+             <string>Dial</string>
+            </property>
+            <property name="icon">
+             <iconset theme="call-start-symbolic">
+              <normaloff>../../../../</normaloff>../../../../</iconset>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QPushButton" name="PhonePad8">
+            <property name="text">
+             <string>8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="PhonePad1">
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="shortcut">
+             <string>Q</string>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="PhonePad3">
+            <property name="text">
+             <string>3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="4">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="4">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0">
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="PhonePad9">
+            <property name="text">
+             <string>9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="PhonePad6">
+            <property name="text">
+             <string>6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QGroupBox" name="lineButtonGroup">
@@ -1058,7 +1323,7 @@
      <x>0</x>
      <y>0</y>
      <width>733</width>
-     <height>17</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="fileMenu">
@@ -1200,7 +1465,7 @@
   </action>
   <action name="callInvite">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="contact-new-symbolic" resource="icons.qrc">
      <normaloff>:/icons/images/invite.png</normaloff>:/icons/images/invite.png</iconset>
    </property>
    <property name="text">
@@ -1221,7 +1486,7 @@
   </action>
   <action name="callAnswer">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="call-start-symbolic" resource="icons.qrc">
      <normaloff>:/icons/images/answer.png</normaloff>:/icons/images/answer.png</iconset>
    </property>
    <property name="text">
@@ -1242,7 +1507,7 @@
   </action>
   <action name="callBye">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="call-end-symbolic" resource="icons.qrc">
      <normaloff>:/icons/images/bye.png</normaloff>:/icons/images/bye.png</iconset>
    </property>
    <property name="text">
@@ -1263,7 +1528,7 @@
   </action>
   <action name="callReject">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="cards-block" resource="icons.qrc">
      <normaloff>:/icons/images/reject.png</normaloff>:/icons/images/reject.png</iconset>
    </property>
    <property name="text">
@@ -1287,7 +1552,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="chronometer-pause" resource="icons.qrc">
      <normaloff>:/icons/images/hold.png</normaloff>:/icons/images/hold.png</iconset>
    </property>
    <property name="text">
@@ -1305,7 +1570,7 @@
   </action>
   <action name="callRedirect">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="transform-move-horizontal" resource="icons.qrc">
      <normaloff>:/icons/images/redirect.png</normaloff>:/icons/images/redirect.png</iconset>
    </property>
    <property name="text">
@@ -1323,7 +1588,7 @@
   </action>
   <action name="callDTMF">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="input-dialpad-symbolic" resource="icons.qrc">
      <normaloff>:/icons/images/dtmf.png</normaloff>:/icons/images/dtmf.png</iconset>
    </property>
    <property name="text">
@@ -1436,7 +1701,7 @@
   </action>
   <action name="callRedial">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="edit-redo" resource="icons.qrc">
      <normaloff>:/icons/images/redial.png</normaloff>:/icons/images/redial.png</iconset>
    </property>
    <property name="text">
@@ -1487,7 +1752,7 @@
   </action>
   <action name="callConference">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="group" resource="icons.qrc">
      <normaloff>:/icons/images/conference.png</normaloff>:/icons/images/conference.png</iconset>
    </property>
    <property name="text">
@@ -1508,7 +1773,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="microphone-sensitivity-muted-symbolic" resource="icons.qrc">
      <normaloff>:/icons/images/mute.png</normaloff>:/icons/images/mute.png</iconset>
    </property>
    <property name="text">
@@ -1529,7 +1794,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="system-switch-user" resource="icons.qrc">
      <normaloff>:/icons/images/transfer.png</normaloff>:/icons/images/transfer.png</iconset>
    </property>
    <property name="text">
@@ -1716,7 +1981,7 @@
   </action>
   <action name="actionSendMsg">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset theme="message-new" resource="icons.qrc">
      <normaloff>:/icons/images/message.png</normaloff>:/icons/images/message.png</iconset>
    </property>
    <property name="text">
@@ -1777,6 +2042,11 @@
     <cstring>diamondcardSign_upAction</cstring>
    </property>
   </action>
+  <action name="toggleWindowAction">
+   <property name="text">
+    <string>Toggle window visibility</string>
+   </property>
+  </action>
   <actiongroup name="actgrActivateLine">
    <action name="actionLine1">
     <property name="checkable">
@@ -1807,11 +2077,6 @@
     <cstring>actgrActivateLine</cstring>
    </property>
   </actiongroup>
-  <action name="toggleWindowAction">
-   <property name="text">
-    <string>Toggle window visibility</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
@@ -1894,6 +2159,22 @@
     <hint type="sourcelabel">
      <x>664</x>
      <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePadCall</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>quickCall()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -2498,6 +2779,240 @@
    <signal>triggered()</signal>
    <receiver>MphoneForm</receiver>
    <slot>toggleWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad1</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad2</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad3</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad4</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad5</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad6</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad7</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad8</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad9</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePad0</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePadStar</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePadHash</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePadPlus</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>appendText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PhonePadBSpace</sender>
+   <signal>clicked()</signal>
+   <receiver>MphoneForm</receiver>
+   <slot>clearInviteCB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
   </connection>
  </connections>
  <slots>
