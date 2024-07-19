@@ -1644,8 +1644,7 @@ Bei Übereinstimmung klicken Sie auf das Vorhängeschloss, und Twinkle merkt sic
     </message>
     <message>
         <source>Line &amp;2:</source>
-        <translation>Leitung &amp;2:
-</translation>
+        <translation>Leitung &amp;2:</translation>
     </message>
     <message>
         <source>Alt+2</source>
@@ -1917,8 +1916,7 @@ Bei Übereinstimmung klicken Sie auf das Vorhängeschloss, und Twinkle merkt sic
     </message>
     <message>
         <source>Line 2</source>
-        <translation>Leitung 2
-</translation>
+        <translation>Leitung 2</translation>
     </message>
     <message>
         <source>idle</source>
@@ -2243,8 +2241,7 @@ Bei Übereinstimmung klicken Sie auf das Vorhängeschloss, und Twinkle merkt sic
     <message>
         <source>&amp;Mute</source>
         <comment>menu text</comment>
-        <translation>Stu&amp;mm
-</translation>
+        <translation>Stu&amp;mm</translation>
     </message>
     <message>
         <source>Xfer</source>
@@ -2467,8 +2464,7 @@ Um den Online-Status eines Buddies abzufragen, muss &lt;i&gt;dessen&lt;/i&gt; Pr
     </message>
     <message>
         <source>&amp;Mute</source>
-        <translation>Stu&amp;mm
-</translation>
+        <translation>Stu&amp;mm</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -3636,8 +3632,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
 Bei Anrufen werden Mikrofon- und Lautsprecherdevice geprüft.&lt;/p&gt;
 &lt;p&gt;Versuche, einen abgehenden Ruf zu tätigen, werden bei gefundenen Audio-Problemen abgebrochen,&lt;br&gt;
 eingehende Rufe werden nicht entgegengenommen. &lt;br&gt;
-Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
-</translation>
+Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>On an incoming call, Twinkle will try to find the name belonging to the incoming SIP address in your address book. This name will be displayed.</source>
